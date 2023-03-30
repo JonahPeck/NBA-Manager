@@ -13,5 +13,9 @@ class Custom_Team(Base):
     Small_Forward_id = Column(String(), ForeignKey('Players.id'))
     Power_Forward_id = Column(String(), ForeignKey('Players.id'))
     Center_id = Column(String(), ForeignKey('Players.id'))
+
+    def add_to_db(self, session):
+        session.add(self)
+        session.commit()
     # players_id = Column(Integer(), ForeignKey('Players.id'))
     # managers_id = Column(Integer()), ForeignKey('Managers.id')

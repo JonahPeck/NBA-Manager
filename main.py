@@ -9,6 +9,7 @@ from classes.base import Base
 from sqlalchemy.orm import *
 from sqlalchemy import *
 
+option1 = None
 
 # playersdb = PlayersDB('database.db')
 if __name__ == '__main__':
@@ -80,7 +81,9 @@ hometown_selection(session, manager1, manager2)
 manager1 = Managers.get_manager(session, manager1)
 # print(manager1.name)
 manager2 = Managers.get_manager(session, manager2)
-# print(manager2.name)
+
+# team1_pg = Players.get_player_figures(session, option1)
+# team2_pg = Players.get_player_figures(session, manager2)
 roster_selection(session, manager1, manager2,
                  hometown_budget1=1, hometown_budget2=1)
 # print(

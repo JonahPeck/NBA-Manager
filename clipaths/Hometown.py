@@ -11,14 +11,14 @@ def hometown_selection(session, manager1, manager2):
     dict = {
         "Denver": 5000,
         "1": 5000,
-        "Phoenix": 5000,
-        "2": 5000,
-        "Los Angeles": 5000,
-        "3": 5000,
-        "Miami": 5000,
-        "4": 5000,
-        "Memphis": 5000,
-        "5": 5000
+        "Phoenix": 4500,
+        "2": 4500,
+        "Los Angeles": 3750,
+        "3": 3750,
+        "Miami": 3500,
+        "4": 3500,
+        "Memphis": 3250,
+        "5": 3250
 
     }
     hometown_budget1 = None

@@ -1,5 +1,6 @@
 from classes.Players import Players
 from classes.Managers import Managers
+from classes.custom_team import Custom_Team
 
 
 def roster_selection(session, manager1, manager2, hometown_budget1, hometown_budget2):
@@ -44,6 +45,7 @@ def roster_selection(session, manager1, manager2, hometown_budget1, hometown_bud
         "jake": 750,
         "Ryan": 750,
         "Max": 750
+
     }
     dict_center = {
         "Joel Embiid": 1200,
@@ -95,7 +97,9 @@ def roster_selection(session, manager1, manager2, hometown_budget1, hometown_bud
         "Maile": 750,
         "jake": 750,
         "Ryan": 750,
-        "Max": 750
+        "Max": 750,
+        "David": 50,
+        "Sam": 50
     }
 
     point_guard1_selection = True
@@ -268,10 +272,12 @@ def roster_selection(session, manager1, manager2, hometown_budget1, hometown_bud
 
     print(f"{manager2.name} you have ${Remaining_budget_manager2} remaining")
 
-    sf1_selection = True
-    while sf1_selection:
-        option5 = input(f'''
-        {manager1.name}, Choose a Small Forward:
+    print("be mindful of how much you are spending")
+
+    pf1_selection = True
+    while pf1_selection:
+        option7 = input(f'''
+        {manager1.name}, Choose a Power Forward:
     (testing data)
     Jonah - 500
     Maile - 750
@@ -280,18 +286,18 @@ def roster_selection(session, manager1, manager2, hometown_budget1, hometown_bud
     Max -750
 
         ''')
-        if option5 not in dict_sf:
-            print("Choose a valid Small Forward")
+        if option7 not in dict_pf:
+            print("Choose a valid Power Forward")
         else:
-            small_forward1 = dict_sf[option5]
-            sf1_selection = False
+            power_forward1 = dict_pf[option7]
+            pf1_selection = False
             print(
-                f"{manager1.name}'s Small Forward is {option5}, costing ${small_forward1}")
+                f"{manager1.name}'s Power Forward is {option7}, costing ${power_forward1}")
 
-    sf2_selection = True
-    while sf2_selection:
-        option6 = input(f'''
-        {manager2.name}, Choose a Small Forward:
+    pf2_selection = True
+    while pf2_selection:
+        option8 = input(f'''
+        {manager2.name}, Choose a Power Forward:
     (testing data)
     Jonah - 500
     Maile - 750
@@ -299,19 +305,122 @@ def roster_selection(session, manager1, manager2, hometown_budget1, hometown_bud
     Ryan - 750
     Max -750
         ''')
-        if option6 == option5:
-            print("Choose an undrafted Small Forward")
+        if option8 == option7:
+            print("Choose an undrafted Power Forward")
         else:
-            small_forward2 = dict_sf[option6]
-            sf2_selection = False
+            power_forward2 = dict_pf[option8]
+            pf2_selection = False
             print(
-                f"{manager2.name}'s Small Forward is {option6}, costing ${small_forward2}")
+                f"{manager2.name}'s Small Forward is {option6}, costing ${power_forward2}")
 
-    Remaining_budget_manager1 -= small_forward1
-    Remaining_budget_manager2 -= small_forward2
+    Remaining_budget_manager1 -= power_forward1
+    Remaining_budget_manager2 -= power_forward2
     print(f"{manager1.name} you have ${Remaining_budget_manager1} remaining.")
 
     print(f"{manager2.name} you have ${Remaining_budget_manager2} remaining")
+
+    print(f''' 
+    -------------------------------------------------------------------------------------------------------------------------------
+            AFTER ROUNDS 1,2,3 AND 4 HERE ARE THE TEAMS:
+
+            {manager1.name}'s Team: Point Guard:{option1} | Center:{option3} | Small Forward: {option5} | Power Forward: {option7}
+            {manager2.name}'s Team: Point Guard:{option2} | Center:{option4} | Small Forward: {option6} | Power Forward: {option8}
+
+    -------------------------------------------------------------------------------------------------------------------------------
+
+    
+    ''')
+
+    print(''' 
+    --------------------------------------------------
+            FINAL ROUND
+    --------------------------------------------------
+        
+    ''')
+    print(f"{manager1.name}'s budget for the final round is ${Remaining_budget_manager1} ")
+    print(f"{manager2.name}'s budget for the final round is ${Remaining_budget_manager2} ")
+
+    sg1_selection = True
+    while sg1_selection:
+        option9 = input(f'''
+        {manager1.name}, Choose a Shooting Guard:
+    (testing data)
+    Jonah - 500
+    Maile - 750
+    jake - 750
+    Ryan - 750
+    Max -750
+
+        ''')
+        if option9 not in dict_sg:
+            print("Choose a valid Shooting Guard")
+        elif Remaining_budget_manager1 < 500:
+            shooting_guard1 = dict_sg["David"]
+        else:
+            shooting_guard1 = dict_sg[option9]
+            sg1_selection = False
+            print(
+                f"{manager1.name}'s Power Forward is {option9}, costing ${shooting_guard1}")
+
+    sg2_selection = True
+    while sg2_selection:
+        option10 = input(f'''
+        {manager2.name}, Choose a Shooting Guard:
+    (testing data)
+    Jonah - 500
+    Maile - 750
+    jake - 750
+    Ryan - 750
+    Max -750
+        ''')
+        if option10 == option9:
+            print("Choose an undrafted Shooting Guard")
+        elif Remaining_budget_manager2 < 500:
+            shooting_guard2 = dict_sg["Sam"]
+        else:
+            shooting_guard2 = dict_sg[option10]
+            sg2_selection = False
+            print(
+                f"{manager2.name}'s Small Forward is {option10}, costing ${shooting_guard2}")
+
+    Remaining_budget_manager1 -= shooting_guard1
+    Remaining_budget_manager2 -= shooting_guard2
+    print(f"{manager1.name} you have ${Remaining_budget_manager1} remaining.")
+
+    print(f"{manager2.name} you have ${Remaining_budget_manager2} remaining")
+
+    print(f''' 
+    -------------------------------------------------------------------------------------------------------------------------------
+            AFTER THE DRAFT HERE ARE THE TEAMS:
+
+            {manager1.name}'s Team: Point Guard: {option1} | Center: {option3} | Small Forward: {option5} | Power Forward: {option7} | Shooting Guard: {option9}
+            {manager2.name}'s Team: Point Guard: {option2} | Center: {option4} | Small Forward: {option6} | Power Forward: {option8} | Shooting Guard: {option10}
+
+    -------------------------------------------------------------------------------------------------------------------------------
+
+    
+    ''')
+
+    Custom_Team(manager_id=manager1.name, budget=hometown_budget1, Point_Guard_id=option1,
+                Shooting_Guard_id=option3, Small_Forward_id=option5, Power_Forward_id=option7,
+                Center_id=option9).add_to_db(session)
+    Custom_Team(manager_id=manager2.name, budget=hometown_budget2, Point_Guard_id=option2,
+                Shooting_Guard_id=option4, Small_Forward_id=option6, Power_Forward_id=option8,
+                Center_id=option10).add_to_db(session)
+
+    p1list = [option1, option3, option5, option7, option9]
+    for option in (p1list):
+        p1 = Players.get_player_figures(session, option)
+    tst1 = 0
+    tst1 = option1 + option3 + option5 + option7 + option9
+    print(option1)
+    # Loop through playerlist
+    # Get the individual players
+    # tst1 +=
+    Total_score_team1 = (manager1.Outside_Scoring + manager1.Inside_Soring +
+                         manager1.Defending + manager1.Athleticism + manager1.Playmaking + manager1.Rebounding)
+    Total_score_team2 = (manager2.Outside_Scoring + manager2.Inside_Soring +
+                         manager2.Defending + manager2.Athleticism + manager2.Playmaking + manager2.Rebounding)
 
     # Remaining_budget_manager1 = Managers(
     #     manager1.budget).get_manager(hometown_budget1 - point_guard1)

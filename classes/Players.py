@@ -25,33 +25,9 @@ class Players(Base):
     def filter_by(cls, session):
         filtered_players = session.query(Players).filter(Players.name == input)
         return filtered_players
-        # query by cls
-        # access the object and from there access the cost and sum up the attributes
 
-        # if __name__ == '__main__':
-
-        #     engine = create_engine('sqlite:///nba.db')
-
-        #     with Session(engine) as session:
-        #         BillyBob = Players(name="Billy Bob",
-        #                            Team="Flatiron",
-        #                            Position="Point Guard",
-        #                            Cost=1200,
-        #                            Outside_Scoring=80,
-        #                            Inside_Scoring=80,
-        #                            Athleticism=80,
-        #                            Playmanking=80,
-        #                            Rebounding=80)
-        #         JimBob = Players(name="Jim Bob",
-        #                          Team="Flatiron JV",
-        #                          Position="Center",
-        #                          Cost=1500,
-        #                          Outside_Scoring=85,
-        #                          Inside_Scoring=85,
-        #                          Athleticism=85,
-        #                          Playmanking=85,
-        #                          Rebounding=85)
-
-        #         session.add(BillyBob)
-        #         session.add(JimBob)
-        #         session.commit()
+    @classmethod
+    def get_player_figures(cls, session, player):
+        filtered_players = session.query(Players).filter(
+            Players.name == player).first()
+        return filtered_players
