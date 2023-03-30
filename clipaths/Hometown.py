@@ -9,33 +9,33 @@ def hometown_selection(session, manager1, manager2):
     list = ["Denver", "Phoenix", "Los Angeles",
             "Miami", "Memphis", "1", "2", "3", "4", "5"]
     dict = {
-        "Denver": 1000,
-        "1": 1000,
-        "Phoenix": 2000,
-        "2": 2000,
-        "Los Angeles": 3000,
-        "3": 3000,
-        "Miami": 2500,
-        "4": 2500,
-        "Memphis": 2200,
-        "5": 2200
+        "Denver": 5000,
+        "1": 5000,
+        "Phoenix": 5000,
+        "2": 5000,
+        "Los Angeles": 5000,
+        "3": 5000,
+        "Miami": 5000,
+        "4": 5000,
+        "Memphis": 5000,
+        "5": 5000
 
     }
-    print(f"{manager1} pick a hometown")
-    option1 = input(''' 
-        Choose a Hometown
-        1) Denver
-        2) Phoenix
-        3) Los Angeles
-        4) Miami
-        5) Memphis
-        
-        ''')
     hometown_budget1 = None
     hometown_budget2 = None
     hometown_selection1 = True
     hometown_selection2 = True
     while hometown_selection1:
+        print(f"{manager1} pick a hometown")
+        option1 = input(''' 
+            Choose a Hometown
+            1) Denver
+            2) Phoenix
+            3) Los Angeles
+            4) Miami
+            5) Memphis
+            
+            ''')
         if option1 in dict:
             hometown_budget1 = dict[option1]
             # hometown_budget1.add_budget(session, manager1)
@@ -51,7 +51,6 @@ def hometown_selection(session, manager1, manager2):
 
     while hometown_selection2:
         print(f"{manager2}: pick a hometown")
-
         option2 = input(''' 
             Choose a Hometown
             1) Denver

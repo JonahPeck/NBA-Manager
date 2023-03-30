@@ -24,6 +24,7 @@ class Players(Base):
     @classmethod
     def filter_by(cls, session):
         filtered_players = session.query(Players).filter(Players.name == input)
+        return filtered_players
         # query by cls
         # access the object and from there access the cost and sum up the attributes
 

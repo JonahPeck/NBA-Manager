@@ -60,6 +60,7 @@ _________________________________
 
         print(f"Today's matchup will be {manager1} vs {manager2}!!!")
         # userinput
+
     print('''
              -|
                -' |
@@ -76,6 +77,11 @@ _________________________________
        ///\\\///\\\///\\\///\\\///\\\///\\\
     ''')
 hometown_selection(session, manager1, manager2)
-roster_selection(session, manager1, manager2)
+manager1 = Managers.get_manager(session, manager1)
+# print(manager1.name)
+manager2 = Managers.get_manager(session, manager2)
+# print(manager2.name)
+roster_selection(session, manager1, manager2,
+                 hometown_budget1=1, hometown_budget2=1)
 # print(
 # f'{manager1} what is your hometown? Please select from the list below: ')
