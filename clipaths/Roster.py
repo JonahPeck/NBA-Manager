@@ -356,6 +356,7 @@ def roster_selection(session, manager1, manager2, hometown_budget1, hometown_bud
             print("Choose a valid Shooting Guard")
         elif Remaining_budget_manager1 < 500:
             shooting_guard1 = dict_sg["David"]
+            sg1_selection = False
         else:
             shooting_guard1 = dict_sg[option9]
             sg1_selection = False
@@ -377,6 +378,7 @@ def roster_selection(session, manager1, manager2, hometown_budget1, hometown_bud
             print("Choose an undrafted Shooting Guard")
         elif Remaining_budget_manager2 < 500:
             shooting_guard2 = dict_sg["Sam"]
+            sg2_selection = False
         else:
             shooting_guard2 = dict_sg[option10]
             sg2_selection = False
@@ -408,19 +410,55 @@ def roster_selection(session, manager1, manager2, hometown_budget1, hometown_bud
                 Shooting_Guard_id=option4, Small_Forward_id=option6, Power_Forward_id=option8,
                 Center_id=option10).add_to_db(session)
 
+    ptotal = 0
     p1list = [option1, option3, option5, option7, option9]
     for option in (p1list):
-        p1 = Players.get_player_figures(session, option)
-    tst1 = 0
-    tst1 = option1 + option3 + option5 + option7 + option9
-    print(option1)
+        player = Players.get_player_figures(session, option)
+        ptotal_1 = player.Inside_scoring + player.Outside_Scoring + player.Defending + \
+            player.Athleticism + player.Playmaking + player.Rebounding
+        ptotal_3 = player.Inside_scoring + player.Outside_Scoring + player.Defending + \
+            player.Athleticism + player.Playmaking + player.Rebounding
+        ptotal_5 = player.Inside_scoring + player.Outside_Scoring + player.Defending + \
+            player.Athleticism + player.Playmaking + player.Rebounding
+        ptotal_7 = player.Inside_scoring + player.Outside_Scoring + player.Defending + \
+            player.Athleticism + player.Playmaking + player.Rebounding
+        ptotal_9 = player.Inside_scoring + player.Outside_Scoring + player.Defending + \
+            player.Athleticism + player.Playmaking + player.Rebounding
+
+    p2list = [option2, option4, option6, option8, option10]
+    for option in (p2list):
+        player = Players.get_player_figures(session, option)
+        ptotal_2 = player.Inside_scoring + player.Outside_Scoring + player.Defending + \
+            player.Athleticism + player.Playmaking + player.Rebounding
+        ptotal_4 = player.Inside_scoring + player.Outside_Scoring + player.Defending + \
+            player.Athleticism + player.Playmaking + player.Rebounding
+        ptotal_6 = player.Inside_scoring + player.Outside_Scoring + player.Defending + \
+            player.Athleticism + player.Playmaking + player.Rebounding
+        ptotal_8 = player.Inside_scoring + player.Outside_Scoring + player.Defending + \
+            player.Athleticism + player.Playmaking + player.Rebounding
+        ptotal_10 = player.Inside_scoring + player.Outside_Scoring + player.Defending + \
+            player.Athleticism + player.Playmaking + player.Rebounding
+    # tst1 = 0
+    # tst1 = option1 + option3 + option5 + option7 + option9
+    sum_1 = ptotal_1 + ptotal_3 + ptotal_5 + ptotal_7 + ptotal_9
+    sum_2 = ptotal_2 + ptotal_4 + ptotal_6 + ptotal_8 + ptotal_10
+
+    if sum_1 > sum_2:
+        print(
+            f"Congrats {manager1.name}! You have defeated {manager2.name} with a score of {sum_1} to {sum_2}!")
+    else:
+        print(
+            f"Congrats {manager2.name}! You have defeated {manager1.name} with a score of {sum_2} to {sum_1}")
+
+    print("Thansk for playing NBA MANAGER")
+
     # Loop through playerlist
     # Get the individual players
     # tst1 +=
-    Total_score_team1 = (manager1.Outside_Scoring + manager1.Inside_Soring +
-                         manager1.Defending + manager1.Athleticism + manager1.Playmaking + manager1.Rebounding)
-    Total_score_team2 = (manager2.Outside_Scoring + manager2.Inside_Soring +
-                         manager2.Defending + manager2.Athleticism + manager2.Playmaking + manager2.Rebounding)
+    # Total_score_team1 = (manager1.Outside_Scoring + manager1.Inside_Soring +
+    #                      manager1.Defending + manager1.Athleticism + manager1.Playmaking + manager1.Rebounding)
+    # Total_score_team2 = (manager2.Outside_Scoring + manager2.Inside_Soring +
+    #                      manager2.Defending + manager2.Athleticism + manager2.Playmaking + manager2.Rebounding)
 
     # Remaining_budget_manager1 = Managers(
     #     manager1.budget).get_manager(hometown_budget1 - point_guard1)
