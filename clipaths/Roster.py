@@ -40,11 +40,11 @@ def roster_selection(session, manager1, manager2, hometown_budget1, hometown_bud
         "Tyrese Haliburton": 750,
         "Kyrie Irving": 750,
         "Trae Young": 600,
-        "Jonah": 500,
-        "Maile": 750,
-        "jake": 750,
-        "Ryan": 750,
-        "Max": 750
+        # "Jonah": 500,
+        # "Maile": 750,
+        # "jake": 750,
+        # "Ryan": 750,
+        # "Max": 750
 
     }
     dict_center = {
@@ -54,11 +54,11 @@ def roster_selection(session, manager1, manager2, hometown_budget1, hometown_bud
         "Bam Adebayo": 750,
         "Domantas Sabonis": 600,
         "Karl Anthony-Towns": 500,
-        "Jonah": 500,
-        "Maile": 750,
-        "jake": 750,
-        "Ryan": 750,
-        "Max": 750
+        # "Jonah": 500,
+        # "Maile": 750,
+        # "jake": 750,
+        # "Ryan": 750,
+        # "Max": 750
     }
 
     dict_sf = {
@@ -67,11 +67,11 @@ def roster_selection(session, manager1, manager2, hometown_budget1, hometown_bud
         "Kawhi Leonard": 900,
         "Jaylen Brown": 750,
         "Zach Lavine": 600,
-        "Jonah": 500,
-        "Maile": 750,
-        "jake": 750,
-        "Ryan": 750,
-        "Max": 750
+        # "Jonah": 500,
+        # "Maile": 750,
+        # "jake": 750,
+        # "Ryan": 750,
+        # "Max": 750
     }
     dict_pf = {
         "Giannis AntetoKounmpo": 1200,
@@ -79,11 +79,11 @@ def roster_selection(session, manager1, manager2, hometown_budget1, hometown_bud
         "Kevin Durant": 900,
         "Pascal Siakam": 750,
         "Zion Williamson": 600,
-        "Jonah": 500,
-        "Maile": 750,
-        "jake": 750,
-        "Ryan": 750,
-        "Max": 750
+        # "Jonah": 500,
+        # "Maile": 750,
+        # "jake": 750,
+        # "Ryan": 750,
+        # "Max": 750
     }
 
     dict_sg = {
@@ -93,35 +93,25 @@ def roster_selection(session, manager1, manager2, hometown_budget1, hometown_bud
         "Devin Booker": 750,
         "DeMar Derozan": 600,
         "Lamelo Ball": 500,
-        "Jonah": 500,
-        "Maile": 750,
-        "jake": 750,
-        "Ryan": 750,
-        "Max": 750,
-        "David": 50,
-        "Sam": 50
+        "David 'Tab Master' Doan": 100,
+        "Sam '8 Mile' Waters": 100,
     }
 
     point_guard1_selection = True
     while point_guard1_selection:
         option1 = input(f'''
     {manager1.name}, Choose a Point Guard:
-    (testing data)
-    Jonah - 500
-    Maile - 750
-    jake - 750
-    Ryan - 750
-    Max -750
 
-
-    Luka Doncic       |	  Dallas, Mavericks	        - $1,200
-    Ja Morant	      |   Memphis, Grizzlies	    - $900
-    James Harden	  |   Philly, 76ers	            - $750
-    Damian Lillard	  |   Portland, Trailblazers	- $600
-    Steph Curry	      |   Golden State, Warriors	- $600
-    Tyrese Haliburton |   Indiana, Pacers	        - $600
-    Kyrie Irving	  |   Dallas, Mavericks	        - $500
-    Trae Young	      |   Atlanta, Hawks	        - $500
+                    ROUND 1
+    
+    Luka Doncic       |	 - $1,200
+    Ja Morant	      |  - $900
+    James Harden	  |  - $750
+    Damian Lillard	  |  - $600
+    Steph Curry	      |  - $600
+    Tyrese Haliburton |  - $600
+    Kyrie Irving	  |  - $500
+    Trae Young	      |  - $500
 
 
         ''')
@@ -137,22 +127,18 @@ def roster_selection(session, manager1, manager2, hometown_budget1, hometown_bud
     while point_guard2_selection:
         option2 = input(f'''
         {manager2.name}, Choose a Point Guard:
-    (testing data)
-    Jonah - 500
-    Maile - 750
-    jake - 750
-    Ryan - 750
-    Max -750
 
+                    ROUND 1
+    
 
-    Luka Doncic       |	  Dallas, Mavericks	        - $1,200
-    Ja Morant	      |   Memphis, Grizzlies	    - $900
-    James Harden	  |   Philly, 76ers	            - $750
-    Damian Lillard	  |   Portland, Trailblazers	- $600
-    Steph Curry	      |   Golden State, Warriors	- $600
-    Tyrese Haliburton |   Indiana, Pacers	        - $600
-    Kyrie Irving	  |   Dallas, Mavericks	        - $500
-    Trae Young	      |   Atlanta, Hawks	        - $500
+    Luka Doncic       |	 - $1,200
+    Ja Morant	      |  - $900
+    James Harden	  |  - $750
+    Damian Lillard	  |  - $600
+    Steph Curry	      |  - $600
+    Tyrese Haliburton |  - $600
+    Kyrie Irving	  |  - $500
+    Trae Young	      |  - $500
 
 
         ''')
@@ -175,13 +161,18 @@ def roster_selection(session, manager1, manager2, hometown_budget1, hometown_bud
     while center1_selection:
         option3 = input(f'''
         {manager1.name}, Choose a Center:
-    (testing data)
-    Jonah - 500
-    Maile - 750
-    jake - 750
-    Ryan - 750
-    Max -750
 
+                    ROUND 2
+        
+
+         Joel Embiid          | $1200
+         Anthony Davis        | $1000
+         Nikola Jokic         | $900
+         Bam Adebayo          | $750
+         Domantas Sabonis     | $600
+         Karl Anthony-Towns   | $500
+
+         
         ''')
         if option3 not in dict_center:
             print("Choose a valid Center")
@@ -195,12 +186,17 @@ def roster_selection(session, manager1, manager2, hometown_budget1, hometown_bud
     while center2_selection:
         option4 = input(f'''
         {manager2.name}, Choose a Center:
-    (testing data)
-    Jonah - 500
-    Maile - 750
-    jake - 750
-    Ryan - 750
-    Max -750
+
+                    ROUND 2
+
+         Joel Embiid          | $1200
+         Anthony Davis        | $1000
+         Nikola Jokic         | $900
+         Bam Adebayo          | $750
+         Domantas Sabonis     | $600
+         Karl Anthony-Towns   | $500
+
+
         ''')
         if option4 == option3:
             print("Choose an undrafted Center")
@@ -230,13 +226,17 @@ def roster_selection(session, manager1, manager2, hometown_budget1, hometown_bud
     sf1_selection = True
     while sf1_selection:
         option5 = input(f'''
+                    ROUND 3
+
         {manager1.name}, Choose a Small Forward:
-    (testing data)
-    Jonah - 500
-    Maile - 750
-    jake - 750
-    Ryan - 750
-    Max -750
+
+
+        Lebron James    | $1200
+        Jimmy Butler    | $1000
+        Kawhi Leonard   | $900
+        Jaylen Brown    | $750
+        Zach Lavine     | $600
+
 
         ''')
         if option5 not in dict_sf:
@@ -251,12 +251,16 @@ def roster_selection(session, manager1, manager2, hometown_budget1, hometown_bud
     while sf2_selection:
         option6 = input(f'''
         {manager2.name}, Choose a Small Forward:
-    (testing data)
-    Jonah - 500
-    Maile - 750
-    jake - 750
-    Ryan - 750
-    Max -750
+
+                    ROUND 3
+
+        Lebron James    | $1200
+        Jimmy Butler    | $1000
+        Kawhi Leonard   | $900
+        Jaylen Brown    | $750
+        Zach Lavine     | $600
+
+
         ''')
         if option6 == option5:
             print("Choose an undrafted Small Forward")
@@ -278,13 +282,16 @@ def roster_selection(session, manager1, manager2, hometown_budget1, hometown_bud
     while pf1_selection:
         option7 = input(f'''
         {manager1.name}, Choose a Power Forward:
-    (testing data)
-    Jonah - 500
-    Maile - 750
-    jake - 750
-    Ryan - 750
-    Max -750
 
+                    ROUND 4
+
+        Giannis AntetoKounmpo  | $1200
+        Jayson Tatum           | $1000
+        Kevin Durant           | $900
+        Pascal Siakam          | $750
+        Zion Williamson        | $600
+
+        
         ''')
         if option7 not in dict_pf:
             print("Choose a valid Power Forward")
@@ -298,12 +305,16 @@ def roster_selection(session, manager1, manager2, hometown_budget1, hometown_bud
     while pf2_selection:
         option8 = input(f'''
         {manager2.name}, Choose a Power Forward:
-    (testing data)
-    Jonah - 500
-    Maile - 750
-    jake - 750
-    Ryan - 750
-    Max -750
+
+                    ROUND 4
+
+        Giannis AntetoKounmpo  | $1200
+        Jayson Tatum           | $1000
+        Kevin Durant           | $900
+        Pascal Siakam          | $750
+        Zion Williamson        | $600
+
+
         ''')
         if option8 == option7:
             print("Choose an undrafted Power Forward")
@@ -311,7 +322,7 @@ def roster_selection(session, manager1, manager2, hometown_budget1, hometown_bud
             power_forward2 = dict_pf[option8]
             pf2_selection = False
             print(
-                f"{manager2.name}'s Small Forward is {option6}, costing ${power_forward2}")
+                f"{manager2.name}'s Power Forward is {option6}, costing ${power_forward2}")
 
     Remaining_budget_manager1 -= power_forward1
     Remaining_budget_manager2 -= power_forward2
@@ -344,46 +355,57 @@ def roster_selection(session, manager1, manager2, hometown_budget1, hometown_bud
     while sg1_selection:
         option9 = input(f'''
         {manager1.name}, Choose a Shooting Guard:
-    (testing data)
-    Jonah - 500
-    Maile - 750
-    jake - 750
-    Ryan - 750
-    Max -750
+
+                    ROUND 5
+
+        Shai Gilgeous-Alexander     | $1200
+        Donovan Mitchell            | $1000
+        Paul George                 | $900
+        Devin Booker                | $750
+        DeMar Derozan               | $600
+        Lamelo Ball                 | $500
+        David 'Tab Master' Doan     | $100
+        Sam '8 Mile' Waters         | $100
 
         ''')
-        if option9 not in dict_sg:
+        if option9 not in dict_sg and dict_sg[option9] > Remaining_budget_manager1:
             print("Choose a valid Shooting Guard")
-        elif Remaining_budget_manager1 < 500:
-            shooting_guard1 = dict_sg["David"]
-            sg1_selection = False
+        # elif Remaining_budget_manager1 < 500:
+        #     shooting_guard1 = dict_sg["David"]
+        #     sg1_selection = False
         else:
             shooting_guard1 = dict_sg[option9]
             sg1_selection = False
             print(
-                f"{manager1.name}'s Power Forward is {option9}, costing ${shooting_guard1}")
+                f"{manager1.name}'s Shooting Guard is {option9}, costing ${shooting_guard1}")
 
     sg2_selection = True
     while sg2_selection:
         option10 = input(f'''
         {manager2.name}, Choose a Shooting Guard:
-    (testing data)
-    Jonah - 500
-    Maile - 750
-    jake - 750
-    Ryan - 750
-    Max -750
+
+                    ROUND 5
+
+        Shai Gilgeous-Alexander     | $1200
+        Donovan Mitchell            | $1000
+        Paul George                 | $900
+        Devin Booker                | $750
+        DeMar Derozan               | $600
+        Lamelo Ball                 | $500
+        David 'Tab Master' Doan     | $100
+        Sam '8 Mile' Waters         | $100
+
         ''')
-        if option10 == option9:
-            print("Choose an undrafted Shooting Guard")
-        elif Remaining_budget_manager2 < 500:
-            shooting_guard2 = dict_sg["Sam"]
-            sg2_selection = False
+        if option10 == option9 and dict_sf[option10] > Remaining_budget_manager2:
+            print("Choose a valid Shooting Guard")
+        # elif Remaining_budget_manager2 < 500:
+        #     shooting_guard2 = dict_sg["Sam"]
+        #     sg2_selection = False
         else:
             shooting_guard2 = dict_sg[option10]
             sg2_selection = False
             print(
-                f"{manager2.name}'s Small Forward is {option10}, costing ${shooting_guard2}")
+                f"{manager2.name}'s Shooting Guard is {option10}, costing ${shooting_guard2}")
 
     Remaining_budget_manager1 -= shooting_guard1
     Remaining_budget_manager2 -= shooting_guard2
@@ -443,6 +465,14 @@ def roster_selection(session, manager1, manager2, hometown_budget1, hometown_bud
     sum_1 = ptotal_1 + ptotal_3 + ptotal_5 + ptotal_7 + ptotal_9
     sum_2 = ptotal_2 + ptotal_4 + ptotal_6 + ptotal_8 + ptotal_10
 
+    # answer_final = True
+    # while answer_final:
+    #     input("Would you like to know the result?")
+    #     if input != "Yes":
+    #         print("Ya sure?")
+    #     else:
+    #         answer_final == False
+
     if sum_1 > sum_2:
         print(
             f"Congrats {manager1.name}! You have defeated {manager2.name} with a score of {sum_1} to {sum_2}!")
@@ -450,35 +480,44 @@ def roster_selection(session, manager1, manager2, hometown_budget1, hometown_bud
         print(
             f"Congrats {manager2.name}! You have defeated {manager1.name} with a score of {sum_2} to {sum_1}")
 
-    print("Thansk for playing NBA MANAGER")
+    print("Thanks for playing NBA MANAGER!")
 
-    # Loop through playerlist
-    # Get the individual players
-    # tst1 +=
-    # Total_score_team1 = (manager1.Outside_Scoring + manager1.Inside_Soring +
-    #                      manager1.Defending + manager1.Athleticism + manager1.Playmaking + manager1.Rebounding)
-    # Total_score_team2 = (manager2.Outside_Scoring + manager2.Inside_Soring +
-    #                      manager2.Defending + manager2.Athleticism + manager2.Playmaking + manager2.Rebounding)
+    saved_game = True
+    while saved_game:
+        input("Would you like to save your game? (Yes or No)")
+        if input == "Yes":
+            saved_game = False
+        else:
+            # delete functionality which will take the team off of the custom team table
+            print("Thanks for playing!")
 
-    # Remaining_budget_manager1 = Managers(
-    #     manager1.budget).get_manager(hometown_budget1 - point_guard1)
+            # Loop through playerlist
+            # Get the individual players
+            # tst1 +=
+            # Total_score_team1 = (manager1.Outside_Scoring + manager1.Inside_Soring +
+            #                      manager1.Defending + manager1.Athleticism + manager1.Playmaking + manager1.Rebounding)
+            # Total_score_team2 = (manager2.Outside_Scoring + manager2.Inside_Soring +
+            #                      manager2.Defending + manager2.Athleticism + manager2.Playmaking + manager2.Rebounding)
 
-    # Remaining_budget_manager2 = hometown_budget2 - point_guard2
-    # print(f"{manager1.name} you have ${Remaining_budget_manager1} remaining")
+            # Remaining_budget_manager1 = Managers(
+            #     manager1.budget).get_manager(hometown_budget1 - point_guard1)
 
-    # print(f'{manager2} you have ${Remaining_budget_manager2} remaining.')
+            # Remaining_budget_manager2 = hometown_budget2 - point_guard2
+            # print(f"{manager1.name} you have ${Remaining_budget_manager1} remaining")
 
-    # I want to access the cost of each player to give the manager an idea of how much money they
-    # have remaining for other players
+            # print(f'{manager2} you have ${Remaining_budget_manager2} remaining.')
 
-    # at the end I'd like to query through and print out the teams that are associated with each manager
+            # I want to access the cost of each player to give the manager an idea of how much money they
+            # have remaining for other players
 
-    # if option2 in dict:
-    #     hometown_budget2 = dict[option2]
-    #     hometown_selection2 = False
-    #     Managers(name=manager2, budget=option1,
-    #              hometown=hometown_budget2).add_to_db(session)
-    #     print(
-    #         f" {manager2}, your hometown is {option2} and your budget to build a roster is ${hometown_budget2}")
-    # else:
-    #     print("Pick a valid city")
+            # at the end I'd like to query through and print out the teams that are associated with each manager
+
+            # if option2 in dict:
+            #     hometown_budget2 = dict[option2]
+            #     hometown_selection2 = False
+            #     Managers(name=manager2, budget=option1,
+            #              hometown=hometown_budget2).add_to_db(session)
+            #     print(
+            #         f" {manager2}, your hometown is {option2} and your budget to build a roster is ${hometown_budget2}")
+            # else:
+            #     print("Pick a valid city")

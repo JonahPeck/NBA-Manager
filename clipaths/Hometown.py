@@ -18,7 +18,18 @@ def hometown_selection(session, manager1, manager2):
         "Miami": 3500,
         "4": 3500,
         "Memphis": 3250,
-        "5": 3250
+        "5": 3250,
+        "New York": 6000,
+        "6": 6000,
+        "Boston": 6500,
+        "7": 6500,
+        "San Francisco": 7000,
+        "8": 7000,
+        "Detroit": 4500,
+        "9": 4500,
+        "Toronto": 5500,
+        "10": 5500,
+
 
     }
     hometown_budget1 = None
@@ -34,6 +45,11 @@ def hometown_selection(session, manager1, manager2):
             3) Los Angeles
             4) Miami
             5) Memphis
+            6) New York
+            7) Boston
+            8) San Francisco
+            9) Detroit
+            10) Toronto
             
             ''')
         if option1 in dict:
@@ -58,6 +74,11 @@ def hometown_selection(session, manager1, manager2):
             3) Los Angeles
             4) Miami
             5) Memphis
+            6) New York
+            7) Boston
+            8) San Francisco
+            9) Detroit
+            10) Toronto
             
             ''')
 
