@@ -1,1 +1,34 @@
-Generic single-database configuration.
+Welcome to NBA Manager
+
+This is my phase 3 project for Flatiorn School with an emphasis on python and SQL Alchemy
+This project allows users the opportunity to be a pseudo NBA Manager where
+they are given the option to choose a hometown which corresponds to a budget with which they can
+use to build a team. Players must stay within their budget and will alternate choosing a player for 
+each position in basketball old-school recess style. 
+
+#Installation
+Use the package manager pipenv to install the requirements dependencies
+
+```bash
+pipenv install
+pipenv shell
+```
+To Start the game, in the terminal you will run:
+
+$ python3 main.py
+
+Run down of the game:
+
+To start you must select if you want to play the game. 
+
+From there you will choose a name for manager one and then choose a name for manager two (or have a friend choos to compete against)
+
+From there you must choose a hometown. Each hometown has a different corresponding budget. No two managers competing against one another can have the same hometown. 
+
+After that you will go recess style selecting players for your roster. Be mindful of how much you spend and make sure to not pick the same player that your opponent just drafted. 
+
+Once the draft is over the final score will be revealed and the better manager will prevail. You can choose to save your game through the prompts at the end or start a new game by finishing and following the instructions provided at the top! 
+
+Thanks for playing NBA MANAGER!
+
+
