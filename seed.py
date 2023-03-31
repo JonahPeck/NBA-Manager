@@ -88,7 +88,7 @@ with Session(engine) as session:
                             Inside_scoring=81, Defending=65, Athleticism=86, Playmaking=76, Rebounding=45, Cost=500)
     David_Doan = Players(name="David Tab Master Doan", Team="Flatiron", Position="Shooting Guard", Outside_Scoring=50,
                          Inside_scoring=50, Defending=50, Athleticism=50, Playmaking=50, Rebounding=50, Cost=0)
-    Sam_Waters = Players(name="Sam 8 Mile Waters ", Team="Flatiron", Position="Shooting Guard", Outside_Scoring=50,
+    Sam_Waters = Players(name="Sam 8 Mile Waters", Team="Flatiron", Position="Shooting Guard", Outside_Scoring=50,
                          Inside_scoring=50, Defending=50, Athleticism=50, Playmaking=50, Rebounding=50, Cost=0)
 
     MrPeck = Managers(name="Mr. Peck", hometown="Los Angeles", budget=3000)
