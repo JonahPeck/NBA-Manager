@@ -23,8 +23,8 @@ def hometown_selection(session, manager1, manager2):
         "6": 6000,
         "Boston": 6500,
         "7": 6500,
-        "San Francisco": 7000,
-        "8": 7000,
+        "San Francisco": 6000,
+        "8": 6000,
         "Detroit": 4500,
         "9": 4500,
         "Toronto": 5500,
@@ -82,7 +82,7 @@ def hometown_selection(session, manager1, manager2):
             
             ''')
 
-        if option2 in dict:
+        if option2 in dict and option2 != option1:
             hometown_budget2 = dict[option2]
             hometown_selection2 = False
             Managers(name=manager2, budget=hometown_budget2,
@@ -91,3 +91,12 @@ def hometown_selection(session, manager1, manager2):
                 f" {manager2}, your hometown is {option2} and your budget to build a roster is ${hometown_budget2}")
         else:
             print("Pick a valid city")
+
+    Bonus = input(
+        f"{manager1}, did you do something that Jordan took personally?")
+    if Bonus == "yes":
+        session.query(Managers).update({
+            Managers.budget: Managers.budget + 250
+        })
+
+        # add home vs away functionality

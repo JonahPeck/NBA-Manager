@@ -10,16 +10,16 @@ engine = create_engine('sqlite:///nba.db')
 Base.metadata.create_all(engine)
 with Session(engine) as session:
 
-    Jonah = Players(name="Jonah", Team="Lakers", Position="Center", Outside_Scoring=80,
-                    Inside_scoring=75, Defending=77, Athleticism=65, Playmaking=87, Rebounding=81, Cost=500)
-    Maile = Players(name="Maile", Team="Celtics", Position="Point Guard", Outside_Scoring=80,
-                    Inside_scoring=75, Defending=77, Athleticism=65, Playmaking=87, Rebounding=81, Cost=750)
-    jake = Players(name="jake", Team="Hawks", Position="Shooting Guard", Outside_Scoring=80,
-                   Inside_scoring=75, Defending=77, Athleticism=65, Playmaking=87, Rebounding=81, Cost=750)
-    Ryan = Players(name="Ryan", Team="Nuggets", Position="Power Forward", Outside_Scoring=80,
-                   Inside_scoring=75, Defending=77, Athleticism=65, Playmaking=87, Rebounding=81, Cost=750)
-    Max = Players(name="Max", Team="Clippers", Position="Small Forward", Outside_Scoring=80,
-                  Inside_scoring=75, Defending=77, Athleticism=65, Playmaking=87, Rebounding=81, Cost=750)
+    # Jonah = Players(name="Jonah", Team="Lakers", Position="Center", Outside_Scoring=80,
+    #                 Inside_scoring=75, Defending=77, Athleticism=65, Playmaking=87, Rebounding=81, Cost=500)
+    # Maile = Players(name="Maile", Team="Celtics", Position="Point Guard", Outside_Scoring=80,
+    #                 Inside_scoring=75, Defending=77, Athleticism=65, Playmaking=87, Rebounding=81, Cost=750)
+    # jake = Players(name="jake", Team="Hawks", Position="Shooting Guard", Outside_Scoring=80,
+    #                Inside_scoring=75, Defending=77, Athleticism=65, Playmaking=87, Rebounding=81, Cost=750)
+    # Ryan = Players(name="Ryan", Team="Nuggets", Position="Power Forward", Outside_Scoring=80,
+    #                Inside_scoring=75, Defending=77, Athleticism=65, Playmaking=87, Rebounding=81, Cost=750)
+    # Max = Players(name="Max", Team="Clippers", Position="Small Forward", Outside_Scoring=80,
+    #               Inside_scoring=75, Defending=77, Athleticism=65, Playmaking=87, Rebounding=81, Cost=750)
 
     # actual Players
     # point guards
@@ -86,10 +86,10 @@ with Session(engine) as session:
                            Inside_scoring=76, Defending=61, Athleticism=79, Playmaking=85, Rebounding=46, Cost=600)
     DeMar_Derozan = Players(name="DeMar Derozan", Team="Bulls", Position="Shooting Guard", Outside_Scoring=92,
                             Inside_scoring=81, Defending=65, Athleticism=86, Playmaking=76, Rebounding=45, Cost=500)
-    David_Doan = Players(name="David 'Tab Master' Doan", Team="Flatiron", Position="Shooting Guard", Outside_Scoring=65,
-                         Inside_scoring=65, Defending=65, Athleticism=65, Playmaking=65, Rebounding=65, Cost=100)
-    Sam_Waters = Players(name="Sam '8 Mile' Waters ", Team="Flatiron", Position="Shooting Guard", Outside_Scoring=65,
-                         Inside_scoring=65, Defending=65, Athleticism=65, Playmaking=60, Rebounding=60, Cost=99)
+    David_Doan = Players(name="David Tab Master Doan", Team="Flatiron", Position="Shooting Guard", Outside_Scoring=50,
+                         Inside_scoring=50, Defending=50, Athleticism=50, Playmaking=50, Rebounding=50, Cost=0)
+    Sam_Waters = Players(name="Sam 8 Mile Waters ", Team="Flatiron", Position="Shooting Guard", Outside_Scoring=50,
+                         Inside_scoring=50, Defending=50, Athleticism=50, Playmaking=50, Rebounding=50, Cost=0)
 
     MrPeck = Managers(name="Mr. Peck", hometown="Los Angeles", budget=3000)
     MrsPeck = Managers(name="Mrs. Peck", hometown="Phoenix", budget=1500)
@@ -99,7 +99,11 @@ with Session(engine) as session:
     Maile_Team = Custom_Team(manager_id=2, budget=3000, Point_Guard_id=2,
                              Shooting_Guard_id=3, Small_Forward_id=4, Power_Forward_id=5, Center_id=1)
 
-    everything = [Jonah, Maile, jake, Ryan, Max,
+    everything = [Luka_Doncic, Ja_Morant, James_Harden, Damian_Lillard, Steph_Curry, Tyrese_Haliburton, Kyrie_Irving, Trae_Young, Lebron_James,
+                  Jimmy_Butler, Kawhi_Leonard, Jaylen_Brown, Zach_Lavine, Giannis_AntetoKounmpo, Jayson_Tatum, Kevin_Durant, Pascal_Siakam, Zion_Williamson,
+                  Joel_Embiid, Anthony_Davis, Nikola_Jokic, Bam_Adebayo, Domantas_Sabonis, Karl_Anthony_Towns, Shai_Gilgeous_Alexander,
+                  Donovan_Mitchell, Paul_George, Devin_Booker, DeMar_Derozan, David_Doan, Sam_Waters,
+
                   Jonah_Team, Maile_Team, MrPeck, MrsPeck]
     session.add_all(everything)
     session.commit()
