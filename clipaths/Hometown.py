@@ -93,7 +93,7 @@ def hometown_selection(session, manager1, manager2):
             print("Pick a valid city")
 
     Bonus = input(
-        f"{manager1}, did you do something that Jordan took personally?")
+        f"{manager1}, did you do something that Jordan took personally? (the answer is always yes)")
     if Bonus == "yes":
         session.query(Managers).update({
             Managers.budget: Managers.budget + 250

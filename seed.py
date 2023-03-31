@@ -72,7 +72,7 @@ with Session(engine) as session:
                           Inside_scoring=81, Defending=78, Athleticism=84, Playmaking=69, Rebounding=74, Cost=900)
     Domantas_Sabonis = Players(name="Domantas Sabonis", Team="Kings", Position="Center", Outside_Scoring=89,
                                Inside_scoring=84, Defending=54, Athleticism=72, Playmaking=68, Rebounding=83, Cost=600)
-    Karl_Anthony_Towns = Players(name="Karl-Anthony Towns", Team="Timberwolves", Position="Center", Outside_Scoring=88,
+    Karl_Anthony_Towns = Players(name="Karl Anthony-Towns", Team="Timberwolves", Position="Center", Outside_Scoring=88,
                                  Inside_scoring=83, Defending=58, Athleticism=81, Playmaking=68, Rebounding=66, Cost=500)
     # Shooting Guards
 

@@ -94,7 +94,6 @@ def roster_selection(session, manager1, manager2, hometown_budget1, hometown_bud
         "Paul George": 900,
         "Devin Booker": 750,
         "DeMar Derozan": 600,
-        "Lamelo Ball": 500,
         "David Tab Master Doan": 0,
         "Sam 8 Mile Waters": 0,
     }
@@ -173,7 +172,7 @@ def roster_selection(session, manager1, manager2, hometown_budget1, hometown_bud
          Nikola Jokic         | $900
          Bam Adebayo          | $750
          Domantas Sabonis     | $600
-         Karl Anthony-Towns   | $500
+        
 
          
         ''')
@@ -197,7 +196,7 @@ def roster_selection(session, manager1, manager2, hometown_budget1, hometown_bud
          Nikola Jokic         | $900
          Bam Adebayo          | $750
          Domantas Sabonis     | $600
-         Karl Anthony-Towns   | $500
+         
 
 
         ''')
@@ -370,7 +369,6 @@ def roster_selection(session, manager1, manager2, hometown_budget1, hometown_bud
         Paul George                 | $900
         Devin Booker                | $750
         DeMar Derozan               | $600
-        Lamelo Ball                 | $500
         David Tab Master Doan       | Free
         Sam 8 Mile Waters           | Free
 
@@ -395,7 +393,6 @@ def roster_selection(session, manager1, manager2, hometown_budget1, hometown_bud
         Paul George                 | $900
         Devin Booker                | $750
         DeMar Derozan               | $600
-        Lamelo Ball                 | $500
         David Tab Master Doan       | Free
         Sam 8 Mile Waters           | Free
 
@@ -498,6 +495,7 @@ def roster_selection(session, manager1, manager2, hometown_budget1, hometown_bud
             # delete functionality which will take the team off of the custom team table
             session.delete(manager1)
             session.delete(manager2)
+            session.commit()
             saved_game = False
 
             # Loop through playerlist
