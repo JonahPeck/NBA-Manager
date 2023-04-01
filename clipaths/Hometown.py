@@ -15,10 +15,10 @@ def hometown_selection(session, manager1, manager2):
         "2": 4500,
         "Los Angeles": 3750,
         "3": 3750,
-        "Miami": 3500,
-        "4": 3500,
-        "Memphis": 3250,
-        "5": 3250,
+        "Miami": 4500,
+        "4": 4500,
+        "Memphis": 3500,
+        "5": 3500,
         "New York": 6000,
         "6": 6000,
         "Boston": 6500,
@@ -91,9 +91,9 @@ def hometown_selection(session, manager1, manager2):
                 f" {manager2}, your hometown is {option2} and your budget to build a roster is ${hometown_budget2}")
         else:
             print("Pick a valid city")
-
+# update function that will add $250 to the budget if Jordan too something personally
     Bonus = input(
-        f"{manager1}, did you do something that Jordan took personally? (the answer is always yes)")
+        f"{manager1}, did you do something that Michael Jordan took personally? (the answer is always yes)")
     if Bonus == "yes":
         session.query(Managers).update({
             Managers.budget: Managers.budget + 250

@@ -434,35 +434,76 @@ def roster_selection(session, manager1, manager2, hometown_budget1, hometown_bud
                 Center_id=option10).add_to_db(session)
 
     ptotal = 0
-    p1list = [option1, option3, option5, option7, option9]
-    print(p1list)
-    for option in (p1list):
+    p1list_1 = [option1]
+    p1list_2 = [option3]
+    p1list_3 = [option5]
+    p1list_4 = [option7]
+    p1list_5 = [option9]
+    # print(p1list)
+    for option in (p1list_1):
         player = Players.get_player_figures(session, option)
         ptotal_1 = player.Outside_Scoring + player.Inside_scoring + player.Defending + \
             player.Athleticism + player.Playmaking + player.Rebounding
+    for option in (p1list_2):
+        player = Players.get_player_figures(session, option)
         ptotal_3 = player.Outside_Scoring + player.Inside_scoring + player.Defending + \
             player.Athleticism + player.Playmaking + player.Rebounding
+    for option in (p1list_3):
+        player = Players.get_player_figures(session, option)
         ptotal_5 = player.Outside_Scoring + player.Inside_scoring + player.Defending + \
             player.Athleticism + player.Playmaking + player.Rebounding
+    for option in (p1list_4):
+        player = Players.get_player_figures(session, option)
         ptotal_7 = player.Outside_Scoring + player.Inside_scoring + player.Defending + \
             player.Athleticism + player.Playmaking + player.Rebounding
+    for option in (p1list_5):
+        player = Players.get_player_figures(session, option)
         ptotal_9 = player.Outside_Scoring + player.Inside_scoring + player.Defending + \
             player.Athleticism + player.Playmaking + player.Rebounding
 
-    p2list = [option2, option4, option6, option8, option10]
-    print(p2list)
-    for option in (p2list):
+        # ptotal_3 = player.Outside_Scoring + player.Inside_scoring + player.Defending + \
+        #     player.Athleticism + player.Playmaking + player.Rebounding
+        # ptotal_5 = player.Outside_Scoring + player.Inside_scoring + player.Defending + \
+        #     player.Athleticism + player.Playmaking + player.Rebounding
+        # ptotal_7 = player.Outside_Scoring + player.Inside_scoring + player.Defending + \
+        #     player.Athleticism + player.Playmaking + player.Rebounding
+        # ptotal_9 = player.Outside_Scoring + player.Inside_scoring + player.Defending + \
+        #     player.Athleticism + player.Playmaking + player.Rebounding
+
+    p2list_1 = [option2]
+    p2list_2 = [option4]
+    p2list_3 = [option8]
+    p2list_4 = [option9]
+    p2list_5 = [option10]
+    # print(p2list)
+    for option in (p2list_1):
         player = Players.get_player_figures(session, option)
         ptotal_2 = player.Outside_Scoring + player.Inside_scoring + player.Defending + \
             player.Athleticism + player.Playmaking + player.Rebounding
+    for option in (p2list_2):
+        player = Players.get_player_figures(session, option)
         ptotal_4 = player.Outside_Scoring + player.Inside_scoring + player.Defending + \
             player.Athleticism + player.Playmaking + player.Rebounding
+    for option in (p2list_3):
+        player = Players.get_player_figures(session, option)
         ptotal_6 = player.Outside_Scoring + player.Inside_scoring + player.Defending + \
             player.Athleticism + player.Playmaking + player.Rebounding
+    for option in (p2list_4):
+        player = Players.get_player_figures(session, option)
         ptotal_8 = player.Outside_Scoring + player.Inside_scoring + player.Defending + \
             player.Athleticism + player.Playmaking + player.Rebounding
+    for option in (p2list_5):
+        player = Players.get_player_figures(session, option)
         ptotal_10 = player.Outside_Scoring + player.Inside_scoring + player.Defending + \
             player.Athleticism + player.Playmaking + player.Rebounding
+        # ptotal_4 = player.Outside_Scoring + player.Inside_scoring + player.Defending + \
+        #     player.Athleticism + player.Playmaking + player.Rebounding
+        # ptotal_6 = player.Outside_Scoring + player.Inside_scoring + player.Defending + \
+        #     player.Athleticism + player.Playmaking + player.Rebounding
+        # ptotal_8 = player.Outside_Scoring + player.Inside_scoring + player.Defending + \
+        #     player.Athleticism + player.Playmaking + player.Rebounding
+        # ptotal_10 = player.Outside_Scoring + player.Inside_scoring + player.Defending + \
+        #     player.Athleticism + player.Playmaking + player.Rebounding
     # tst1 = 0
     # tst1 = option1 + option3 + option5 + option7 + option9
     sum_1 = ptotal_1 + ptotal_3 + ptotal_5 + ptotal_7 + ptotal_9
@@ -479,6 +520,8 @@ def roster_selection(session, manager1, manager2, hometown_budget1, hometown_bud
     if sum_1 > sum_2:
         print(
             f"Congrats {manager1.name}! You have defeated {manager2.name} with a score of {sum_1} to {sum_2}!")
+    elif sum_1 == sum_2:
+        print(f"It's a tie!!")
     else:
         print(
             f"Congrats {manager2.name}! You have defeated {manager1.name} with a score of {sum_2} to {sum_1}")
@@ -497,34 +540,3 @@ def roster_selection(session, manager1, manager2, hometown_budget1, hometown_bud
             session.delete(manager2)
             session.commit()
             saved_game = False
-
-            # Loop through playerlist
-            # Get the individual players
-            # tst1 +=
-            # Total_score_team1 = (manager1.Outside_Scoring + manager1.Inside_Soring +
-            #                      manager1.Defending + manager1.Athleticism + manager1.Playmaking + manager1.Rebounding)
-            # Total_score_team2 = (manager2.Outside_Scoring + manager2.Inside_Soring +
-            #                      manager2.Defending + manager2.Athleticism + manager2.Playmaking + manager2.Rebounding)
-
-            # Remaining_budget_manager1 = Managers(
-            #     manager1.budget).get_manager(hometown_budget1 - point_guard1)
-
-            # Remaining_budget_manager2 = hometown_budget2 - point_guard2
-            # print(f"{manager1.name} you have ${Remaining_budget_manager1} remaining")
-
-            # print(f'{manager2} you have ${Remaining_budget_manager2} remaining.')
-
-            # I want to access the cost of each player to give the manager an idea of how much money they
-            # have remaining for other players
-
-            # at the end I'd like to query through and print out the teams that are associated with each manager
-
-            # if option2 in dict:
-            #     hometown_budget2 = dict[option2]
-            #     hometown_selection2 = False
-            #     Managers(name=manager2, budget=option1,
-            #              hometown=hometown_budget2).add_to_db(session)
-            #     print(
-            #         f" {manager2}, your hometown is {option2} and your budget to build a roster is ${hometown_budget2}")
-            # else:
-            #     print("Pick a valid city")

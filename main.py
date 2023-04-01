@@ -15,7 +15,7 @@ option1 = None
 if __name__ == '__main__':
     engine = create_engine('sqlite:///nba.db')
     Base.metadata.create_all(engine)
-    # Players.__table__.drop(engine)
+    # Managers.__table__.drop(engine)
     print('''
 
 
